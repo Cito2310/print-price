@@ -10,7 +10,9 @@ function createWindow() {
     webPreferences: {
       // contextIsolation: false,
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    maxWidth: 800,
+    maxHeight: 600,
   })
 
   if (app.isPackaged) {

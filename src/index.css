@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.print-base {
+    @media print { margin: 0mm }
+}
+
+@media print { body {margin: 0mm} }
+@page { margin: 0mm }

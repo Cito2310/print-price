@@ -1,15 +1,19 @@
-import { dialog, ipcMain } from 'electron';
+import { BrowserWindow, dialog, ipcMain } from 'electron';
 
 import { ipcNames } from '../types/ipcNames';
 
 export const ipConnection = () => {
 
-    ipcMain.on("basic-on-ipc" as ipcNames, (e, args)=>{
-        console.log(args)
-    })
-
-    ipcMain.handle("basic-handle-ipc" as ipcNames, async(e, args)=>{
-        return args
+    ipcMain.on("print-page" as ipcNames, async (e, args) => {
+        const win = BrowserWindow.getFocusedWindow();
+        win?.webContents.print({
+            silent: true,
+            margins: {
+                marginType: "none",
+            },
+            header: "Mercadito Ale",
+            footer: "Mercadito Ale" 
+        })
     })
 
 }
