@@ -1,2 +1,6 @@
 export type ipcNames = 
-    "print-page"
+    "print-page" |
+
+    "app-minimize" |
+    "app-maximize" |
+    "app-close"

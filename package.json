@@ -1,7 +1,7 @@
 {
   "homepage": "./",
-  "name": "electron-react-template",
-  "version": "1.1.2",
+  "name": "print-price",
+  "version": "1.0.0",
   "author": "",
   "description": "",
   "keywords": [
@@ -38,7 +38,8 @@
     ],
     "directories": {
       "buildResources": "assets"
-    }
+    },
+    "productName": "Print Price App"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",

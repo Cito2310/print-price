@@ -9,3 +9,19 @@
 
 @media print { body {margin: 0mm} }
 @page { margin: 0mm }
+
+
+
+@layer utilities {
+    .transition-base {
+        transition: all 100ms linear
+    }
+
+    .draggable {
+        -webkit-app-region: drag;
+    }
+
+    .not-draggable {
+        -webkit-app-region: no-drag;
+    }
+}

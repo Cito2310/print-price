@@ -1,19 +1,12 @@
-import { BrowserWindow, dialog, ipcMain } from 'electron';
+import { BrowserWindow } from 'electron';
 
-import { ipcNames } from '../types/ipcNames';
+import { controlWindow } from './ipcConnections/controlWindow';
+import { printPage } from './ipcConnections/printPage';
 
-export const ipConnection = () => {
+export const ipConnection = (app: Electron.App, win: BrowserWindow) => {
 
-    ipcMain.on("print-page" as ipcNames, async (e, args) => {
-        const win = BrowserWindow.getFocusedWindow();
-        win?.webContents.print({
-            silent: true,
-            margins: {
-                marginType: "none",
-            },
-            header: "Mercadito Ale",
-            footer: "Mercadito Ale" 
-        })
-    })
+    printPage( app, win )
+
+    controlWindow( app, win )
 
 }
